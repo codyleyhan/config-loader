@@ -1,0 +1,11 @@
+{
+    "universe": 42,
+    "pie": 3.14,
+    "hello": "world",
+    "nested": {
+        "value": "good",
+        "more": {
+            "nest": true
+        }
+    }
+}
