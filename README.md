@@ -22,7 +22,10 @@ config.dev.json
     "secret": "super secret",
     "port": 8080,
     "hasBool": true,
-    "pie": 3.14
+    "pie": 3.14,
+    "nested": {
+        "hello": "world"
+    }
 }
 ```
 
@@ -36,6 +39,7 @@ func main() {
     conf := config.LoadConfig("./config", "config")
 
     conf.Get("secret") // "super secret"
+    conf.Get("nested.hello") // "world"
     conf.Get("nothing") // ""
 
     conf.GetInt("port") // 8080
