@@ -12,8 +12,8 @@ func TestLoadConfig(t *testing.T) {
 	}
 
 	anotherConfig := LoadConfig("./test_folder", "another")
-	if anotherConfig.FileName != "another.test.json" {
-		t.Error("Expected another.test.json, got", anotherConfig.FileName)
+	if anotherConfig.FileName() != "another.test.json" {
+		t.Error("Expected another.test.json, got", anotherConfig.FileName())
 	}
 
 	if err := os.Setenv("ENV", "DEV"); err != nil {
@@ -22,8 +22,8 @@ func TestLoadConfig(t *testing.T) {
 	}
 
 	devConfig := LoadConfig("./test_folder", "config")
-	if devConfig.FileName != "config.dev.json" {
-		t.Error("Expected config.dev.json, got", devConfig.FileName)
+	if devConfig.FileName() != "config.dev.json" {
+		t.Error("Expected config.dev.json, got", devConfig.FileName())
 	}
 }
 
